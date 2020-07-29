@@ -1,0 +1,12 @@
+Changelog
+
+=========
+
+Version 1.0.1
+
+- feature  add endpoint param & MOSEC_ENDPOINT env param
+- feature  change --no-dev to --with-dev
+
+Version 1.0.0
+
+- Init

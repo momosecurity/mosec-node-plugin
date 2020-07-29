@@ -1,0 +1,7 @@
+{
+  "name": "pkg-not-install",
+  "version": "0.0.1",
+  "dependencies": {
+    "debug": "^4.2.0"
+  }
+}
