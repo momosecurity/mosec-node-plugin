@@ -16,6 +16,6 @@ npm >= 5.2.0
 ```
 > cd your_node_project/
 > npx github:momosecurity/mosec-node-plugin \
-  --endpoint https://127.0.0.1:9000/api/plugin \ 
+  --endpoint http://127.0.0.1:9000/api/plugin \ 
   --only-provenance
 ```
