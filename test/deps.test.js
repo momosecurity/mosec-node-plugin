@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 let test = require('tap-only');
-let deps = require('../src/deps');
+let deps = require('../dist/deps');
 let path = require('path');
 let npm2fixture = path.resolve(__dirname,
   'fixtures/bundle/node_modules/snyk-resolve-deps-fixtures',
@@ -67,7 +67,7 @@ test('deps - throws without path', function (t) {
 
 // See test/fixtures/pkg-yarn-renamed-deps/README.md
 test('deps - yarn with renamed dep', function (t) {
-  deps('fixtures/pkg-yarn-renamed-deps').then(function (res) {
+  deps(path.resolve(__dirname, 'fixtures/pkg-yarn-renamed-deps')).then(function (res) {
     t.equal(res.name, 'pkg-renamed-dep', 'package name matches');
     t.type(res.dependencies, 'object', 'has dependencies');
     t.equal(Object.keys(res.dependencies).length, 2, 'has 2 deps');
@@ -77,7 +77,7 @@ test('deps - yarn with renamed dep', function (t) {
 });
 
 test('deps - pkg undefined deps', function (t) {
-  deps('fixtures/pkg-undef-deps').then(function (res) {
+  deps(path.resolve(__dirname, 'fixtures/pkg-undef-deps')).then(function (res) {
     t.equal(res.name, 'pkg-undef-deps', 'package name matches');
     t.type(res.dependencies, 'object', 'has dependencies');
   }).catch(function (e) {
